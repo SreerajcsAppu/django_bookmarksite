@@ -1,0 +1,12 @@
+{% extends 'layout/app-layout.html'%}
+{%block 'content'%}
+<div class="deldiv">
+    <form method="post" action="" class="bg-light p-3 mx-auto " style="width: 50%;height: 250px;">
+    {% csrf_token %}
+    <p style="margin-top: 10%;font-weight: bold;font-size: x-large;">Are you sure you want to delete "{{list.title}}"?</p>
+    <input class="btn btn-danger" type="submit" value="Confirm">
+    <a class="btn btn-primary" href="{% url 'page_list' %}" style="float: right;">Back</a>
+
+</form></div>
+
+{% endblock %}

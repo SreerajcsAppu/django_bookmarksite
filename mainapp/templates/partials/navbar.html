@@ -1,0 +1,14 @@
+<nav class="navbar " style="height: 70px; background-color: rgb(166 175 218);">
+    <a href="{% url 'home' %}" style="font-size: x-large;color: black"><b ><i class="fas fa-home"></i></b></a>
+    <a  href="{% url 'signup' %}"></a>
+    <a href="{% url 'login' %}"></a>
+    
+    <a href="{% url 'page_list' %}" class="btn btn-light"><b>Listing page</b></a>
+    <a class="btn btn-success" href="{% url 'create'%}"><b>Add new links</b></a>
+    
+    {% if user.is_authenticated %}
+    <a class="text-danger " href="{% url 'logout' %}"><b>Logout</b></a>
+    {% else %}
+    <a class="text-danger " href="{% url 'logout' %}"><b>Login</b></a>
+    {% endif %}
+</nav>

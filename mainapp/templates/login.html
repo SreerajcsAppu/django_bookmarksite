@@ -1,0 +1,28 @@
+{% extends 'layout/app-layout.html' %}
+
+{% block 'content' %}
+{%include 'partials/navbar.html'%}
+ <div class="container mt-5 pt-2" >
+  <style> 
+    [for='id_password']::after{
+      content: '.';
+      color: white;
+    }
+  </style>
+  <form class="loginpage card mt-5 py-4" style="margin: auto;width: 60%;border-radius: 30px;box-shadow:rgb(6 6 6) 0px 0px 19px 4px; " method="post">
+    <h2 class="mt-4 text-danger" style="text-align: center;
+     text-align: center;
+     font-size: xxx-large;
+     font-weight: bolder; text-shadow: 1px 1px black;">Login</h2>
+    {% csrf_token %}
+    <div class="mt-4 pt-4" style="margin: auto;">
+    {{ form.as_p }}
+    </div>
+    <button class="btn-success mb-2" type="submit" style="width: 30%;
+    margin: auto;
+    font-size: larger;
+    font-weight: bolder;">Login</button>
+    <a class="mx-auto mb-3" href="{% url 'signup' %}">Signup</a>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'layout/app-layout.html' %}
+
+{% block 'content' %}
+ <style>
+   p{
+    text-align: center;
+   }
+   a{
+    float: right;
+   }
+   .mtop{
+      margin-top: 32%
+    }
+   @media (min-width:700px) {
+
+    .mtop{
+      margin-top: 20%
+    }
+   }
+   
+ </style>
+<div class="container">
+  <div class="row">
+  <div class="mtop mx-auto bg-light p-5" style="width: 60%; border-radius: 24px; box-shadow:rgb(6 6 6) 0px 0px 19px 4px;">
+  <h2 class="mb-4 text-center font-italic" style="font-size: xxx-large;">Save URL</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+    <button class="btn btn-success m-2 px-4" type="submit">Add</button>
+    <a class="btn btn-primary m-2 px-4" href="{% url 'page_list' %}">Back</a>
+  </form>
+</div>
+</div>
+</div>
+{% endblock %}

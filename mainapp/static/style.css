@@ -1,0 +1,63 @@
+
+body{
+    background: linear-gradient(24deg, rgb(181 148 94 / 89%) 9%, rgb(53 64 183 / 66%) 100%);
+    background-repeat: no-repeat;
+    min-height: 730px;
+ }
+span{
+    font-weight: bolder;
+}
+
+.homeH1{
+    text-align: center;box-shadow:rgb(6 6 6) 9px 13px 6px 2px;text-shadow: 5px 1px black;color: #ef6c00;
+    font-weight: 900;
+}
+.homeH2{
+    font-weight: 900;
+    text-shadow: 0px 5px 9px rgb(238, 231, 231)
+
+}
+.signbtn{
+    text-align: center;
+    font-weight: 900;
+    font-size: xx-large;
+    max-width: 360px;
+    
+}
+
+.signpgDiv{
+    background: linear-gradient(201deg,rgb(186 218 219) 22%, rgb(150 194 161) 84%);
+    border-radius: 25px
+}
+
+.signupForm p span{
+    display: block;
+    color: #ff1a1a;
+    font-weight: 600;
+    text-shadow: 1px 1px black;
+    /* background-color: #ef6c00; */
+}
+.signupForm p label{
+    font-size: x-large;
+    font-weight: 600;
+    
+}
+.signupForm ul{
+    box-shadow: rgb(6 6 6) 0px 0px 21px 2px;
+    background-color: cornflowerblue;
+    padding-top: 15px ;
+    padding-bottom: 15px;
+    border-radius: 25px;
+    max-width: 700px;
+}
+
+.deldiv{
+    margin-top: 32%
+  }
+ @media (min-width:700px) {
+
+  .deldiv{
+    margin-top: 20%
+  }
+ }
+ 

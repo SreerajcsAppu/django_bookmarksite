@@ -1,0 +1,16 @@
+{% extends "layout/app-layout.html" %}
+
+{% block 'content' %}
+{%include 'partials/navbar.html'%}
+<div class="container mt-5 p-3" style="background-color: #e7dfdf;border-radius: 20px;">
+  {% if user.is_authenticated %}
+    <h1 class="mt-4 py-4" style="text-shadow: 5px 1px #aaaaaa;">You are currently logged in as <span class="text-warning">{{ user.username }}</span>.</h1>
+    <form class="mt-4 py-4 pl-4" method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn-danger p-2 mx-auto">Log Out</button>
+    </form>
+  {% else %}
+    <p>You are not currently logged in.</p>
+  {% endif %}
+</div>
+{% endblock %}

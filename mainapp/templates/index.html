@@ -1,0 +1,86 @@
+{% extends 'layout/app-layout.html'%}
+
+{% block 'content' %}
+{%include 'partials/navbar.html'%}
+<style>
+  .homediv{
+    min-height: 100px;
+    
+    margin-top: 5%;
+    overflow: auto;
+}
+.homep1{
+   display: inline;
+   background-color: #53fd03;
+   margin-right: 5%;
+   padding: 5%;
+   font-size: xx-large;
+   font-weight: 800;
+   float: left;
+}
+.homep2{
+    display: inline;
+    background-color: #53fd03 ;
+    margin-right: 5%;
+    padding: 5%;
+    font-size: xx-large;
+    font-weight: 800;
+    float: right;
+}
+
+</style>
+  <div class="container mt-4 " style="background-image: url('mainapp/static/edit.png');">
+    <h1 class="homeH1 border pb-2" >Bookmarking site</h1>
+    <div  style="height: 70px;max-width: 400px;background-color: rgb(51, 35, 66); margin: auto; border-radius: 25px; margin-top: 5%;">
+        <h3 class="pt-3" style="text-align: center;color: #53fd03;font-weight: 900;"> welcome to the site</h3>
+    </div>
+    
+    <div class="card mt-4 p-4 mx-auto border" style="max-width: 600px;box-shadow:rgb(6 6 6) 0px 0px 19px 4px;background-color: #f2f8ff;">  
+      {% if user.is_authenticated %}
+       
+      <h1 class="signbtn mx-auto bg-warning p-3" style="box-shadow:rgb(6 6 6) 0px 0px 19px 4px;">Now you can use this site functionality </h1>
+      <!-- <h5 style="text-align: center;">or</h5> -->
+      <h4 class="signbtn mx-auto mt-3" ><a class="signbtn btn btn-sm btn-outline-success" href="" >About us</a></h4>
+      {% else %}
+      <h1 class="signbtn mx-auto" ><a class="signbtn btn btn-lg btn-outline-primary mx-auto" style="margin: auto;text-decoration: none;" href="{% url 'signup' %}">Signup</a></h1>
+      <h5 style="text-align: center;">or</h5>
+      <h4 class="signbtn mx-auto" ><a class="signbtn btn btn-sm btn-outline-success" href="{% url 'login' %}" >Login</a></h4>
+      {% endif %}
+    </div>
+  </div>
+
+
+  <div class="homediv bg-dark pt-4">
+   <div class="mb-4">     
+    <div id="lastdiv" class="container homediv1 mt-3 p-3 mx-auto" style="min-height: 100px;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 800;
+    background-color: chartreuse;
+    width: 80%;
+    ">
+       <p >Store and Remove links for further reference</p>
+    </div>
+    <div id="lastdiv" class="container homediv2 my-3 py-3" style="min-height: 100px;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 800;
+    background-color: chartreuse;
+    ">
+       <p >You can easly navigate through the links</p>
+    </div>
+   
+    
+    </div>
+    <div class=" pt-3 pb-5" style="background-color: #114b7f;">
+
+      <div class="mx-auto mb-4 mb-md-2" style="width: 60%;">
+       <a style="margin-right: 20%;" href=""><i class="fa-brands text-light fa-instagram fa-xl"></i></a>
+       <a style="margin-right: 20%;" href=""><i class="fa-brands text-light fa-facebook fa-xl"></i></a>
+       <a style="margin-right: 20%;" href=""><i class="fa-brands text-light fa-github fa-xl"></i></a>
+       <a href=""><i class="fa-regular text-light fa-envelope fa-xl"></i></a>
+       </div>
+    </div>
+  </div>
+  
+{% endblock %}
